@@ -5,10 +5,79 @@ import AddedView from './AddedView';
 
 const AddMembers = () => {
 
-    const [membersList, setMembersList] = useState([]);  // Lista para almacenar miembro
+    const listProv = [
+        {
+            name: 'Matias',
+            last_name: 'Martinez',
+            date_birth: '1998-08-02',
+            date_joining: '1998-08-02',
+            baptism: '',
+            contact: '',
+            church_school: false,
+            bible_institute: false,
+            another_church: '',
+            cell: '',
+            area: '',
+        },
+        {
+            name: 'Matias',
+            last_name: 'Martinez',
+            date_birth: '1998-08-02',
+            date_joining: '1998-08-02',
+            baptism: '',
+            contact: '',
+            church_school: false,
+            bible_institute: false,
+            another_church: '',
+            cell: '',
+            area: '',
+        },
+        {
+            name: 'Matias',
+            last_name: 'Martinez',
+            date_birth: '1998-08-02',
+            date_joining: '1998-08-02',
+            baptism: '',
+            contact: '',
+            church_school: false,
+            bible_institute: false,
+            another_church: '',
+            cell: '',
+            area: '',
+        },
+        {
+            name: 'Matias',
+            last_name: 'Martinez',
+            date_birth: '1998-08-02',
+            date_joining: '1998-08-02',
+            baptism: '',
+            contact: '',
+            church_school: false,
+            bible_institute: false,
+            another_church: '',
+            cell: '',
+            area: '',
+        },
+        {
+            name: 'Matias',
+            last_name: 'Martinez',
+            date_birth: '1998-08-02',
+            date_joining: '1998-08-02',
+            baptism: '',
+            contact: '',
+            church_school: false,
+            bible_institute: false,
+            another_church: '',
+            cell: '',
+            area: '',
+        },
+    ]
+    const [membersList, setMembersList] = useState(listProv);  // Lista para almacenar miembro
 
+    
     useEffect(() => {
         console.log(membersList);
+//        setMembersList(listProv);
     }, [membersList]);
 
     return (
@@ -20,7 +89,7 @@ const AddMembers = () => {
             </div>
             <div className="flex-col flex justify-around h-[100%] w-[49%] rounded-md">
                 <div className="h-[56%] bg-white">
-                    <AddedView title={"Lista a añadir"} btnActive={true} list={membersList}/>
+                    <AddedView title={"Lista a añadir"} setList={setMembersList} list={membersList}/>
                 </div>
                 <div className="bg-white overflow-auto h-[40%] rounded-md">
                     <AddedView title={"Agregados Recientemente"} /> {/* para agregados recientemente, hacer una llamada a la base filtrando por fecha de agregacion*/}

@@ -11,3 +11,11 @@ export const getCellOptions = async () => {
 export const getAreaOptions = async () => {
   return await useService('get', '/members/area-options');
 };
+
+export const addMembers = async (req) => {
+  return await useService('post', '/members/add-members', req);
+};
+
+export const addMember = async (req) => {
+  return await useService('post', '/members/add-member', req);
+};

@@ -18,6 +18,25 @@ export const getAllProcessMembers = async () => {
     }
 }
 
+export const processMembersList = (dataList) => {
+  const data = dataList.map((data) => ({
+    "name": data.name,
+    "last_name": data.last_name,
+    "date_birth": data.date_birth,
+    "date_joining": data.date_joining,
+    "baptism": "2022-06-10",
+    "contact": parseInt(data.contact),
+    "church_school": data.church_school,
+    "bible_institute": data.bible_institute,
+    "another_church": data.another_church,
+    "cell": data.cell.value,
+    "area": data.area.value
+}));
+console.log(data);
+  return data;
+};
+ 
+
 function processMembers(data){
     data.forEach(e => {
         e.id_area

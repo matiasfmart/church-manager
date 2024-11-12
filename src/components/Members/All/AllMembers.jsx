@@ -24,7 +24,7 @@ const AllMembers = () => {
         } catch (error) {
             setStateMembers({ data: [], error: `Server error ${error.name}. Message: "${error.message}"`, loading: false });
             console.error('Error al obtener los miembros:', error);
-        }
+        }      
       };
   
       fetchMembers();

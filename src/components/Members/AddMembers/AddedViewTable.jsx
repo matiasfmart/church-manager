@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaUser } from "react-icons/fa6";
 
-const AddedViewTable = ({ arr }) => {
-    const [selectedId, setSelectedId] = useState([]);
-
+const AddedViewTable = ({ arr, flagBtn, selectedId, setSelectedId}) => {
     const handleSelect = (id) => {
         const index = selectedId.indexOf(id);
         if (index === -1) {
@@ -20,6 +18,10 @@ const AddedViewTable = ({ arr }) => {
     const calculateAge = (birthDate) => {
         return new Date().getFullYear() - new Date(birthDate).getFullYear();
     };
+
+    useEffect(() => {
+        flagBtn(selectedId.length > 0);
+    }, [selectedId, flagBtn]);
 
     return (
         <table className="w-full text-sm text-left rtl:text-right text-gray-500">

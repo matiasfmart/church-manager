@@ -65,6 +65,7 @@ const AddMemberForm = ({setList, list}) => {
             cell: '',
             area: '',
         });
+        console.log(list);
     };
 
     return (
@@ -136,6 +137,7 @@ const AddMemberForm = ({setList, list}) => {
                             id="contact"
                             name="contact"
                             value={formData.contact}
+                            pattern="[0-9]*"
                             onChange={handleChange}
                             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2"
                         />
@@ -143,7 +145,7 @@ const AddMemberForm = ({setList, list}) => {
                     <div className="flex-1">
                         <label htmlFor="baptism" className="block text-sm font-medium text-gray-700">Fecha de Bautismo (Mes y Año)</label>
                         <input
-                            type="month"
+                            type="date"
                             id="baptism"
                             name="baptism"
                             value={formData.baptism}
@@ -230,7 +232,7 @@ const AddMemberForm = ({setList, list}) => {
                 <div className='flex justify-end'>
                     <button
                         type="submit"
-                        className="inline-flex text-white bg-blue-600 font-medium rounded-lg text-sm px-3 py-2 border border-blue-600 hover:bg-white hover:text-blue-600"
+                        className="inline-flex text-white bg-blue-600 font-medium rounded-lg text-xs px-3 py-2 border border-blue-600 hover:bg-white hover:text-blue-600"
                     >
                         Enviar
                     </button>
